@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark-blue: #10144c;
+  --color-brand-medium-blue: #214fa5;
+  --color-brand-primary-blue: #3b47eb;
+  --color-brand-lilac: #8d5ae2;
+  --color-brand-white: #FFFFFF;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles */
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #10144c;
+    
+    --chakra-colors-brand-50: #f2f0ff;
+    --chakra-colors-brand-100: #e5e1ff;
+    --chakra-colors-brand-200: #ccc3ff;
+    --chakra-colors-brand-300: #b2a6ff;
+    --chakra-colors-brand-400: #9988ff;
+    --chakra-colors-brand-500: #8d5ae2;
+    --chakra-colors-brand-600: #7148b5;
+    --chakra-colors-brand-700: #543688;
+    --chakra-colors-brand-800: #38245a;
+    --chakra-colors-brand-900: #1c122d;
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-roboto), sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Standard Tailwind 4 Reset Overrides */
+  * {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+/* Custom Container Utility for Tailwind v4 */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  width: 100%;
+  max-width: 1440px; /* Increased for wider screens */
+}
+
+@layer utilities {
+  .bg-glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
