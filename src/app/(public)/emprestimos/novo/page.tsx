@@ -23,7 +23,7 @@ import { PublicFooter } from '@/components/layout/PublicFooter';
 import { EmprestimoService } from '@/features/emprestimos/services';
 import { LivroService } from '@/features/livros/services';
 import { MembroService } from '@/features/membros/services';
-import { emprestimoSchema, EmprestimoFormData } from '@/features/emprestimos/schemas';
+import { emprestimoSchema, EmprestimoFormData, EmprestimoFormInput } from '@/features/emprestimos/schemas';
 import Link from 'next/link';
 
 interface ApiErrorResponse {
@@ -55,7 +55,7 @@ function NovoEmprestimoContent() {
       handleSubmit,
       setValue,
       formState: { errors },
-   } = useForm<EmprestimoFormData>({
+   } = useForm<EmprestimoFormInput, unknown, EmprestimoFormData>({
       resolver: zodResolver(emprestimoSchema),
       defaultValues: {
          livroId: bookId ? Number(bookId) : undefined,

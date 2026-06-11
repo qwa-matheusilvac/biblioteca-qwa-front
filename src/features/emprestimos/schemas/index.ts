@@ -15,4 +15,5 @@ export const emprestimoSchema = z.object({
   ),
 });
 
-export type EmprestimoFormData = z.infer<typeof emprestimoSchema>;
+export type EmprestimoFormInput = z.input<typeof emprestimoSchema>;
+export type EmprestimoFormData = z.output<typeof emprestimoSchema>;
