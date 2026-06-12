@@ -1,7 +1,12 @@
 import axios from 'axios';
 
+const DEFAULT_API_BASE_URL = 'http://qwalx-02.qwa.brasil:8087';
+
+const resolvedApiBaseUrl =
+  process.env.NEXT_PUBLIC_API_BASE_URL?.trim().replace(/\/+$/, '') || DEFAULT_API_BASE_URL;
+
 const apiClient = axios.create({
-  baseURL: '/',
+  baseURL: resolvedApiBaseUrl,
   headers: {
     'Content-Type': 'application/json',
   },
