@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const API_PROXY_TARGET = 'http://qwalx-02.qwa.brasil:8087';
+
 const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
@@ -8,7 +10,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:8080/api/:path*',
+        destination: `${API_PROXY_TARGET}/api/:path*`,
       },
     ];
   },
